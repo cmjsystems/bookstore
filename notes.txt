@@ -1,0 +1,12 @@
+1. In the windows explorer create a folder for the project
+   and right buttom "Open new Terminal" and execute the commands below:
+   - npx create-react-app bookstore
+   - cd bookstore // go to the bookstore folder
+   - code . // open the vs on the actual folder
+
+2. In the Vs Code execute the commands below:
+   - npm i // download/install the modules through npm
+   - npm start // start as development
+
+3. Project available on GitHub:
+   - 
