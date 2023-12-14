@@ -1,10 +1,8 @@
-import Header from "../components/Header";
-import "./App.css";
+import "./../App.css";
 
 function NewBooks() {
   return (
     <>
-      <Header />
       <h1>New Books Page</h1>
     </>
   );

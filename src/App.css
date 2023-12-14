@@ -46,7 +46,7 @@
 body {
   margin: 0;
   background: burlywood;
-  background-image: url('img_tree.gif'), url('paper.gif');
+  /* background-image: url('img_tree.gif'), url('paper.gif'); */
 }
 
 h1 {
