@@ -1,0 +1,19 @@
+{
+    "inventory": [
+
+        {
+            "id": 1,
+            "title": "The Hobbit",
+            "author": "J.R.R. Tolkien",
+            "ISBN": "978-0-618-57498-5",
+            "price": 14.99
+        },
+        {
+            "id": 2,
+            "title": "The Fellowship of the Ring",
+            "author": "J.R.R. Tolkien",
+            "ISBN": "978-0-618-57498-5",
+            "price": 22.99
+        }
+    ]
+}

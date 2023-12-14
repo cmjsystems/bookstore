@@ -1,6 +1,7 @@
 import Header from "../components/Header";
+import "./App.css";
 
-function Update_Book() {
+function UpdateBook() {
   return (
     <>
       <Header />
@@ -9,4 +10,4 @@ function Update_Book() {
   );
 }
 
-export default Update_Book;
+export default UpdateBook;

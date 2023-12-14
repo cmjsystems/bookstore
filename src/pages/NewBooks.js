@@ -1,6 +1,7 @@
 import Header from "../components/Header";
+import "./App.css";
 
-function New_Books() {
+function NewBooks() {
   return (
     <>
       <Header />
@@ -9,4 +10,4 @@ function New_Books() {
   );
 }
 
-export default New_Books;
+export default NewBooks;

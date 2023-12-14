@@ -1,6 +1,7 @@
 import Header from "../components/Header";
+import "./App.css";
 
-function Main() {
+function MainPage() {
   return (
     <>
       <Header />
@@ -9,4 +10,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default MainPage;

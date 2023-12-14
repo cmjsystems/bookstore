@@ -1,10 +1,11 @@
 1. In Windows Explorer create a folder for the project
    and right-click on “Open new Terminal” and execute the commands below:
-   - npx create-react-app bookstore
+   - ** npx create-react-app bookstore **
    - cd bookstore // go to the bookstore folder
    - code . // open the vs on the actual folder
 
 2. In Vs Code run the commands below:
+   - ** npm i react-router-dom **
    - npm i // download/install the modules through npm
    - npm start // start as development
 
@@ -18,4 +19,5 @@
    "…or push an existing repository from the command line:"
    - git remote add origin https://github.com/cmjsystems/bookstore.git
    - git branch -M main
-   - git push -u origin main 
+   - git push -u origin main
+
