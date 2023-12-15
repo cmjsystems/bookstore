@@ -1,5 +1,6 @@
 import Book from './Book.js';
 
+// Bookstore class with array of Book objects
 class Bookstore {
   constructor(maxBooks = 0) {
     this.books = [];
@@ -29,15 +30,18 @@ class Bookstore {
     book.price = price;
   }
 
+  //Returns the number of created Book objects prior to the time this method is called
   findNumberOfCreatedBooks() {
     return this.books.length;
   }
 
+  //Returns the list of books by a given author
   findBooksByAuthor(author) {
     // return this.books.filter((book) => book.author === author);
     return this.books.filter((book) => book.author.includes(author));
   }
 
+  //Returns the list of books by range of prices
   findBooksByPrice(priceFrom, priceTo) {
     return this.books.filter((book) => book.price >= priceFrom && book.price <= priceTo);
   }
