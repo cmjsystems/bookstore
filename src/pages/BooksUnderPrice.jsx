@@ -4,6 +4,42 @@ import { useNavigate } from 'react-router-dom';
 
 import "./../App.css";
 
+const tableStyle = {
+  borderCollapse: 'collapse',
+  width: '80%',
+  textAlign: 'left',
+  marginBottom: '50px'
+};
+
+const thStyle = {
+  border: '1px solid #ddd',
+  padding: '8px',
+  backgroundColor: '#007BFF',
+  color: 'white'
+};
+
+const tdStyle = {
+  border: '1px solid #ddd',
+  padding: '8px'
+};
+
+const pageStyle = {
+  display: 'flex', 
+  flexDirection: 'column', 
+  justifyContent: 'center', 
+  alignItems: 'center', 
+  height: '100vh',
+  backgroundColor: '#f0f8ff' // AliceBlue color
+};
+
+const titleStyle = {
+  marginBottom: '50px', 
+  color: '#007BFF', 
+  fontSize: '3em', 
+  textShadow: '2px 2px 4px rgba(0,0,0,0.5)' 
+};
+
+
 function BooksUnderPricePage() {
   const navigate = useNavigate();
   const inventory = useContext(InventoryContext);
@@ -35,52 +71,60 @@ function BooksUnderPricePage() {
   };
 
   return (
-    <>
-      <h1>Books Under Price</h1>
-
-      <hr />
-
-      <form onSubmit={handleOnSubmit}>
-        <label>Price Range: </label>
-        <input type="text" name="priceFrom" value={formData.priceFrom} onChange={handleInputChange} />
-        <input type="text" name="priceTo" value={formData.priceTo} onChange={handleInputChange} />
-        <br />
-        <button type="submit">Confirm</button>
-        <br />
-        {error && <div className="error"><p>{error}</p></div>}
+    <div style={pageStyle}>
+      <h1 style={titleStyle}>Books Under Price</h1>
+  
+      <form onSubmit={handleOnSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
+        <label style={{ color: '#007BFF', fontSize: '1.2em' }}>Price Range: </label>
+        <input
+          type="text"
+          name="priceFrom"
+          value={formData.priceFrom}
+          onChange={handleInputChange}
+          style={{ padding: '10px', fontSize: '1.2em' }}
+        />
+        <input
+          type="text"
+          name="priceTo"
+          value={formData.priceTo}
+          onChange={handleInputChange}
+          style={{ padding: '10px', fontSize: '1.2em' }}
+        />
+        <button type="submit" style={{ margin: '20px', padding: '15px', fontSize: '18px', backgroundColor: '#007BFF', color: 'white', border: '1px solid black' }}>Confirm</button>
+        {error && <div className="error" style={{ color: 'red', fontSize: '1.2em' }}><p>{error}</p></div>}
       </form>
-
+  
       <p>Books: ({books.length})</p>
-
+  
       {showBooks > 0 && (
         <>
-          <table>
+          <table style={tableStyle}>
             <thead>
               <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>ISBN</th>
-                <th>Price</th>
+                <th style={thStyle}>Id</th>
+                <th style={thStyle}>Title</th>
+                <th style={thStyle}>Author</th>
+                <th style={thStyle}>ISBN</th>
+                <th style={thStyle}>Price</th>
               </tr>
             </thead>
             <tbody>
               {books.map((book) => (
                 <tr key={book.id}>
-                  <td>{book.id}</td>
-                  <td>{book.title}</td>
-                  <td>{book.author}</td>
-                  <td>{book.isbn}</td>
-                  <td>{book.price}</td>
+                  <td style={tdStyle}>{book.id}</td>
+                  <td style={tdStyle}>{book.title}</td>
+                  <td style={tdStyle}>{book.author}</td>
+                  <td style={tdStyle}>{book.isbn}</td>
+                  <td style={tdStyle}>{book.price}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </>
       )}
-
-      <button onClick={handleMainPageClick}>Main Page</button>
-    </>
+  
+      <button onClick={handleMainPageClick} style={{ margin: '20px', padding: '15px', fontSize: '18px', backgroundColor: '#007BFF', color: 'white', border: '1px solid black' }}>Main Page</button>
+    </div>
   );
 }
 

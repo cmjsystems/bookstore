@@ -60,71 +60,85 @@ function UpdateBookPage() {
     setFormDisabled(true);
   };
 
+  useEffect(() => {
+    // Change the background color when the component mounts
+    document.body.style.backgroundColor = '#e3f2fd';
+  
+    // Change it back when the component unmounts
+    return () => {
+      document.body.style.backgroundColor = null;
+    };
+  }, []);
+
   return (
-    <>
-      <h1>Update Book Page</h1>
-
-      <form onSubmit={handleBookIdSubmit}>
-        <label>Book Id: </label>
-        <input type="text" name="id" value={formData.id} onChange={handleInputChange} />
-        <br />
-        <button type="submit">Confirm</button>
-        <br />
-        {error && <div className="error"><p>{error}</p></div>}
+    <div style={{ backgroundColor: '#e3f2fd', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+      <h1 style={{ color: '#007BFF', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)', fontSize: '2em' }}>Update Book Page</h1>
+  
+      <form onSubmit={handleBookIdSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
+        <label style={{ color: '#007BFF', fontSize: '1.2em' }}>Book Id: </label>
+        <input
+          type="text"
+          name="id"
+          value={formData.id}
+          onChange={handleInputChange}
+          style={{ padding: '10px', fontSize: '1.2em' }}
+        />
+        <button type="submit" style={{ margin: '20px', padding: '15px', fontSize: '18px', backgroundColor: '#007BFF', color: 'white', border: '1px solid black' }}>Confirm</button>
+        {error && <div className="error" style={{ color: 'red', fontSize: '1.2em' }}><p>{error}</p></div>}
       </form>
-
+  
       <hr />
-
-      <form onSubmit={handleUpdateBookSubmit}>
-
-        <label>Title: </label>
+  
+      <form onSubmit={handleUpdateBookSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '10px' }}>
+  
+        <label style={{ color: '#007BFF', fontSize: '1.2em' }}>Title: </label>
         <input
           type="text"
           name="title"
           value={formData.title}
           disabled={formDisabled}
           onChange={handleInputChange}
+          style={{ padding: '10px', fontSize: '1.2em' }}
         />
-
-        <label>Author: </label>
+  
+        <label style={{ color: '#007BFF', fontSize: '1.2em' }}>Author: </label>
         <input
           type="text"
           name="author"
           value={formData.author}
           disabled={formDisabled}
           onChange={handleInputChange}
+          style={{ padding: '10px', fontSize: '1.2em' }}
         />
-
-        <label>ISBN: </label>
+  
+        <label style={{ color: '#007BFF', fontSize: '1.2em' }}>ISBN: </label>
         <input
           type="text"
           name="ISBN"
           value={formData.ISBN}
           disabled={formDisabled}
           onChange={handleInputChange}
+          style={{ padding: '10px', fontSize: '1.2em' }}
         />
-
-        <label>Price: </label>
+  
+        <label style={{ color: '#007BFF', fontSize: '1.2em' }}>Price: </label>
         <input
           type="text"
           name="price"
           value={formData.price}
           disabled={formDisabled}
           onChange={handleInputChange}
+          style={{ padding: '10px', fontSize: '1.2em' }}
         />
-
-        <br />
-
-        <button type="submit" disabled={formDisabled}>
+  
+        <button type="submit" disabled={formDisabled} style={{ margin: '20px', padding: '15px', fontSize: '18px', backgroundColor: '#007BFF', color: 'white', border: '1px solid black' }}>
           Update Book
         </button>
-
-        <br />
-
+  
       </form>
-
-      <button onClick={handleMainPageClick}>Main Page</button>
-    </>
+  
+      <button onClick={handleMainPageClick} style={{ margin: '20px', padding: '15px', fontSize: '18px', backgroundColor: '#007BFF', color: 'white', border: '1px solid black' }}>Main Page</button>
+    </div>
   );
 }
 

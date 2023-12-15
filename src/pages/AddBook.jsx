@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { InventoryContext } from "../contexts/InventoryProvider";
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import "./../App.css";
 
@@ -33,6 +34,11 @@ function AddBookPage() {
       return
     }
 
+    if (isNaN(formData.amount) || formData.amount < 1) {
+      alert("Please enter a valid amount of books.");
+      return;
+    }
+
     setError('')
     setShowForm(true)
   };
@@ -61,65 +67,76 @@ function AddBookPage() {
   };
 
   return (
-    <>
-      <h1>New Books Page</h1>
-
-      <form onSubmit={handleAmountSubmit}>
-        <label>Amount of Books: </label>
-        <input type="text" name="amount" value={formData.amount} onChange={handleInputChange} />
+  <>
+    <div style={{ backgroundColor: '#e3f2fd', height: '100vh' }}>
+      <h1 style={{ textAlign: 'center', color: '#007BFF' }}>New Books Page</h1>
+  
+      <form onSubmit={handleAmountSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <label style={{ margin: '10px' }}>Amount of Books: </label>
+        <input
+          type="text"
+          name="amount"
+          value={formData.amount}
+          onChange={handleInputChange}
+          style={{ margin: '10px', padding: '10px' }}
+        />
         <br />
-        <button type="submit">Confirm</button>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <button type="submit" style={{ margin: '20px', padding: '10px', backgroundColor: '#007BFF', color: 'white', border: '1px solid black' }}>Confirm</button>
+          <div style={{ margin: '20px', padding: '10px', backgroundColor: '#007BFF', color: 'white', textDecoration: 'none', textAlign: 'center', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid black' }}>
+            <Link to="/main" style={{ color: 'white', textDecoration: 'none' }}>Go Back</Link>
+          </div>
+        </div>
         <br />
-        {error && <div className="error"><p>{error}</p></div>}
+        {error && <div className="error" style={{ color: 'red' }}><p>{error}</p></div>}
       </form>
-
+  
       <hr />
-
+  
       {showForm && (
-        <form onSubmit={handleAddBookSubmit}>
-
-          <label>Title: </label>
+        <form onSubmit={handleAddBookSubmit} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', backgroundColor: '#e3f2fd' }}>
+          <label style={{ margin: '10px' }}>Title: </label>
           <input
             type="text"
             name="title"
             value={formData.title}
             onChange={handleInputChange}
+            style={{ margin: '10px', padding: '10px' }}
           />
-
-          <label>Author: </label>
+  
+          <label style={{ margin: '10px' }}>Author: </label>
           <input
             type="text"
             name="author"
             value={formData.author}
             onChange={handleInputChange}
+            style={{ margin: '10px', padding: '10px' }}
           />
-
-          <label>ISBN: </label>
+  
+          <label style={{ margin: '10px' }}>ISBN: </label>
           <input
             type="text"
             name="ISBN"
             value={formData.ISBN}
             onChange={handleInputChange}
+            style={{ margin: '10px', padding: '10px' }}
           />
-
-          <label>Price: </label>
+  
+          <label style={{ margin: '10px' }}>Price: </label>
           <input
             type="text"
             name="price"
             value={formData.price}
             onChange={handleInputChange}
+            style={{ margin: '10px', padding: '10px' }}
           />
-
+  
           <br />
-
-          <button type="submit">Add Book</button>
-
-          <br />
-
+  
+          <button type="submit" style={{ margin: '20px', padding: '10px', backgroundColor: '#007BFF', color: 'white' }}>Add Book</button>
         </form>
       )}
-
-      <button onClick={handleMainPageClick}>Main Page</button>
+      </div>
     </>
   );
 }

@@ -11,10 +11,10 @@ function QuitPage() {
   }
 
   return (
-    <>
-      <h1>Goodbye and see you soon!</h1>
-      <p><button onClick={handleHomePageClick}>Home Page</button></p>
-    </>
+    <div style={{ backgroundColor: '#e3f2fd', height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+      <h1 style={{ color: '#007BFF', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}>Goodbye and see you soon!</h1>
+      <button onClick={handleHomePageClick} style={{ margin: '20px', padding: '10px', backgroundColor: '#007BFF', color: 'white', border: '1px solid black' }}>Home Page</button>
+    </div>
   );
 }
 
