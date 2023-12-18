@@ -2,7 +2,6 @@ import { useNavigate } from 'react-router-dom';
 import "./../App.css";
 
 function HomePage() {
-
   const navigate = useNavigate();
 
   // Navigate to the setup page

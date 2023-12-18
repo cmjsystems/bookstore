@@ -3,6 +3,42 @@ import { InventoryContext } from "../contexts/InventoryProvider";
 import { useNavigate } from 'react-router-dom';
 import "./../App.css";
 
+const tableStyle = {
+  borderCollapse: 'collapse',
+  width: '80%',
+  textAlign: 'left',
+  marginBottom: '50px'
+};
+
+const thStyle = {
+  border: '1px solid #ddd',
+  padding: '8px',
+  backgroundColor: '#007BFF',
+  color: 'white'
+};
+
+const tdStyle = {
+  border: '1px solid #ddd',
+  padding: '8px'
+};
+
+const pageStyle = {
+  display: 'flex', 
+  flexDirection: 'column', 
+  justifyContent: 'center', 
+  alignItems: 'center', 
+  height: '100vh',
+  backgroundColor: '#f0f8ff' // AliceBlue color
+};
+
+const titleStyle = {
+  marginBottom: '50px', 
+  color: '#007BFF', 
+  fontSize: '3em', 
+  textShadow: '2px 2px 4px rgba(0,0,0,0.5)' 
+};
+
+
 function BooksUnderPricePage() {
   const navigate = useNavigate();
   const inventory = useContext(InventoryContext);
