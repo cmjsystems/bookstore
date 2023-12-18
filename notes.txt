@@ -1,3 +1,8 @@
+Team:
+ - Brayan Gutierrez         - Student Number: 223-1122
+ - Claudiomar M. Jesus      - Student Number: 223-0862
+ - Felipe Cardona Jaramillo - Student Number: 223-0752
+
 1. In Windows Explorer create a folder for the project
    and right-click on “Open new Terminal” and execute the commands below:
    - ** npx create-react-app bookstore **
