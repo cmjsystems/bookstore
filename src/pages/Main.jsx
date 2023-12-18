@@ -39,6 +39,7 @@ function MainPage() {
   // Create a new book
   function handleAddBookClick() {
     if (handleLogin()) {
+      // Navigate to the Add Book page
       navigate('/addbook');
     }
   }
@@ -46,93 +47,132 @@ function MainPage() {
   // Update a book
   function handleUpdBookClick() {
     if (handleLogin()) {
+      // Navigate to the Update Book page
       navigate('/updatebook')
     }
   }
 
   // Display all books by a specific author
   function handleBooksByAuthorClick() {
+    // Navigate to the Books by Author page
     navigate('/booksbyauthor');
   }
 
   // Display all books under a price range
   function handleBooksUnderPriceClick() {
+    // Navigate to the Books under Price page
     navigate('/booksunderprice');
   }
 
   // Quit the application
   function handleQuitClick() {
+    // Navigate to the Quit page
     navigate('/quit');
   }
 
   // Go back to the home page
   function handleHomePageClick() {
+    // Navigate to the Home page
     navigate('/');
   }
 
   return (
-    <>
+    <div className = "div_insert_update">
+      
       <h1>Main Menu Page</h1>
 
       <hr />
 
-      <h3>What would you like to do?</h3>
+      <h2> What would you like to do? </h2>
 
-      <p><button onClick={handleAddBookClick}>Enter new books</button> &ensp;(password required)</p>
-      <p><button onClick={handleUpdBookClick}>Change information of a book</button> &ensp;(password required)</p>
-      <p><button onClick={handleBooksByAuthorClick}>Display all books by a specific author</button></p>
-      <p><button onClick={handleBooksUnderPriceClick}>Display all books under a certain price</button></p>
-      <p><button onClick={handleQuitClick}>Quit</button></p>
-      <p><button onClick={handleHomePageClick}>Home Page</button></p>
+      <div>
+        <p>
+          <button
+            className   = "button_2" onClick = {handleAddBookClick}
+            onMouseOver = {e => e.currentTarget.style.backgroundColor = '#0056b3'}
+            onMouseOut  = {e => e.currentTarget.style.backgroundColor = '#007BFF'}
+          > Enter new books </button>
+          &ensp;
+          &ensp;
+          <button
+            className   = "button_2" onClick = {handleUpdBookClick}
+            onMouseOver = {e => e.currentTarget.style.backgroundColor = '#0056b3'}
+            onMouseOut  = {e => e.currentTarget.style.backgroundColor = '#007BFF'}
+          > Update book </button> &ensp; &ensp; (password required)
+        </p>
+        
+        <p>
+          <button
+            className   = "button_2" onClick = {handleBooksByAuthorClick}
+            onMouseOver = {e => e.currentTarget.style.backgroundColor = '#0056b3'}
+            onMouseOut  = {e => e.currentTarget.style.backgroundColor = '#007BFF'}
+          > Display all books by a specific author </button>
+          &ensp;
+          &ensp;
+          <button
+            className   = "button_2" onClick = {handleBooksUnderPriceClick}
+            onMouseOver = {e => e.currentTarget.style.backgroundColor = '#0056b3'}
+            onMouseOut  = {e => e.currentTarget.style.backgroundColor = '#007BFF'}
+          > Display all books under a certain price </button>
+        </p>
+        
+        <p>
+          <button
+            className   = "button_2" onClick = {handleQuitClick}
+            onMouseOver = {e => e.currentTarget.style.backgroundColor = '#0056b3'}
+            onMouseOut  = {e => e.currentTarget.style.backgroundColor = '#007BFF'}
+          > Quit </button>
+          &ensp;
+          &ensp;
+          <button
+            className   = "button_2" onClick = {handleHomePageClick}
+            onMouseOver = {e => e.currentTarget.style.backgroundColor = '#0056b3'}
+            onMouseOut  = {e => e.currentTarget.style.backgroundColor = '#007BFF'}
+          > Home Page </button>
+        </p>
+      </div>
 
       <hr />
-
       {/* Show the book list */}
-      <h3>List of books avaiable...: ({inventory.books.length})</h3>
+      {parseInt(inventory.books.length) > 1 ? (
+        <p>List of available books: ({inventory.books.length})</p>
+      ) : (
+        <p>Book: ({inventory.books.length})</p>
+      )}
 
       {showBooks > 0 && (
         <>
-          <table>
+          <table className = "table_1">
             <thead>
               <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>ISBN</th>
-                <th>Price</th>
+                <th className = "table_th_1"> Id      </th>
+                <th className = "table_th_1"> Title   </th>
+                <th className = "table_th_1"> Author  </th>
+                <th className = "table_th_1"> ISBN    </th>
+                <th className = "table_th_1"> Price   </th>
               </tr>
             </thead>
             <tbody>
               {inventory.books.map((book) => (
                 <tr key={book.id}>
-                  <td>{book.id}</td>
-                  <td>{book.title}</td>
-                  <td>{book.author}</td>
-                  <td>{book.isbn}</td>
-                  <td>{book.price}</td>
+                  <td className = "table_td_1"> {book.id}     </td>
+                  <td className = "table_td_1"> {book.title}  </td>
+                  <td className = "table_td_1"> {book.author} </td>
+                  <td className = "table_td_1"> {book.isbn}   </td>
+                  <td className = "table_td_1"> {book.price}  </td>
                 </tr>
               ))}
             </tbody>
           </table>
-          <br />
         </>
       )}
 
       {/* Footer of the page */}
-      <br />
-      <br />
-      <hr />
       <footer>
-        <ul>
-          <li>Team</li>
-            <ul>
-              <li>Brayan Gutierrez - Student Number: 223-1122</li>
-              <li>Claudiomar Moreira de Jesus - Student Number: 223-0862</li>
-              <li>Felipe Cardona Jaramillo - Student Number: 223-0752</li>
-            </ul>
-        </ul>
+        Team: Brayan Gutierrez (223-1122), Claudiomar Moreira de Jesus (223-0862), Felipe Cardona Jaramillo (223-0752)
       </footer>
-    </>
+    
+    </div>
   );
 }
 

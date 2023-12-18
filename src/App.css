@@ -1,189 +1,167 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* General styles */
+.div_general {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f8ff;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-/* Styles for the BookStore App Pages */
-* {
-  font-family: "Inter", sans-serif;
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: burlywood;
-  /* background-image: url('img_tree.gif'), url('paper.gif'); */
+.div_insert_update {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+  /* background-color: #f0f8ff; */
 }
 
 h1 {
-  margin-top: 0;
-  font-size: 45px;
-  color: hsl(130, 95%, 14%);
-  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+  color: #007BFF;
+  font-size: 3.2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-h5 {
-  margin-top: 0;
-  font-size: 25px;
-  border-style: dotted;
-  color: hsl(130, 95%, 14%);
-  font-family: "Poppins", sans-serif;
+h2 {
+  margin-top: -30px;
+  margin-bottom: 10px;
+  color: #007BFF;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-.container {
-  max-width: 700px;
-  margin: 32px auto;
-  background: hsl(60, 39%, 81%);
-  padding: 16px 32px;
-  box-shadow: 0 4px 40px -8px rgba(0, 0, 0, 0.2);
+p {
+  margin-bottom: -10px;
+  color: #007BFF;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  text-align: left;
 }
 
-.container form {
+.button_1 {
+  margin-top: 40px;
+  padding: 10px 40px;
+  border-radius: 4px;
+  border: none;
+  background-color: #007BFF;
+  color: #fff;
+  font-size: 1.1rem;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: 'all 0.3s ease';
+}
+
+.button_2 {
+  padding: 10px 40px;
+  border-radius: 4px;
+  border: none;
+  background-color: #007BFF;
+  color: #fff;
+  font-size: 1.1rem;
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: 'all 0.3s ease';
+}
+
+.form_1 {
+  text-align: center;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px; */
+}
+
+.form_2 {
+  text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-}
-
-.container form label {
-  /* background: #a2d2ff; */
-  color: #023047;
-  height: 40px;
-  width: 100px;
-  display: flex;
-  border-radius: 30px;
-  align-items: center;
   justify-content: center;
-  cursor: pointer;
+  align-items: center;
+  margin-top: 50px;
+  gap: 10px;
 }
 
-.container form input[type="radio"]:checked + label {
-  background: #023047;
-  color: #fff;
-  font-weight: bold;
-}
-
-.container .choices {
+.form_3 {
+  text-align: center;
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
 }
 
-.container form input[type="radio"] {
-  display: none;
+.label_form {
+  /* display: block; */
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  color: #007BFF;
 }
 
-.container textarea {
-  padding: 16px;
-  font-size: 20px;
-  height: 140px;
-  resize: none;
-  line-height: 1.7;
-  border: 1px solid #023047;
+.label_form_2 {
+  /* display: block; */
+  margin-bottom: 5px;
+  font-size: 1rem;
+  color: #007BFF;
 }
 
-.container button {
-  padding: 8px;
-  font-size: 20px;
-  border: none;
-  background: #023047;
-  color: #fff;
-  cursor: pointer;
+.input_form {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid #007BFF;
+  font-size: 1.2rem;
+  outline: none;
 }
 
-.translation {
-  padding: 12px 32px;
-  background: #edf2f4;
-  margin-top: 20px;
-  font-size: 20px;
-  line-height: 1.7;
-  height: 140px;
-  overflow-y: scroll;
-  position: relative;
-}
-
-.translation .copy-btn {
-  position: absolute;
-  width: 20px;
-  top: 12px;
-  right: 12px;
-  opacity: 0.7;
-  cursor: pointer;
-}
-
-.notification {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 100px);
-  background: #023047;
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: 30px;
-  transition: all 400ms ease;
-}
-
-.notification.active {
-  transform: translate(-50%, -30px);
+.input_form_2 {
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: 1px solid #007BFF;
+  font-size: 1rem;
+  outline: none;
 }
 
 .error {
-  color: blue;
-}
-
-.form-check-label {
+  color: red;
+  font-size: 1.2rem;
   margin-top: 10px;
-  margin-left: 10px;
-  font-size: 15px;
-  font-weight: bold;
-  border-style: dotted;
-  font-family: "Poppins", sans-serif;
 }
 
-
-/* Styles for the Login Page */
-body {
-  margin: 0;
-  padding: 0;
-  /* background-color: #17a2b8; */
-  height: 100vh;
-}
-#login .container #login-row #login-column #login-box {
+.table_1 {
   margin-top: 20px;
-  max-width: 600px;
-  height: 390px;
-  /* border: 1px solid #9C9C9C; */
-  background-color: #EAEAEA;
+  margin-bottom: 40px;
+  border-collapse: collapse;
+  width: 70%;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.table_th_1 {
+  padding: 8px 0;
+  background-color: #007BFF;
+  color: #fff;
+  border-bottom: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+.table_td_1 {
+  padding: 8px 0;
+  border-bottom: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+footer {
+  margin-top: 50px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  color: white;
+  background-color: #007BFF;
+  padding: 5px 0;
 }

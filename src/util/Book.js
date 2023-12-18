@@ -1,9 +1,9 @@
 class Book {
-    constructor(id, title, author, ISBN, price) {
+    constructor(id, title, author, isbn, price) {
         this.id = id;
         this.title = title;
         this.author = author;
-        this.ISBN = ISBN;
+        this.isbn = isbn;
         this.price = price;
     }
 
@@ -31,12 +31,12 @@ class Book {
         this._author = value;
     }
 
-    get ISBN() {
-        return this._ISBN;
+    get isbn() {
+        return this._isbn;
     }
 
-    set ISBN(value) {
-        this._ISBN = value;
+    set isbn(value) {
+        this._isbn = value;
     }
 
     get price() {

@@ -1,5 +1,5 @@
-import "./../App.css";
 import { useNavigate } from 'react-router-dom';
+import "./../App.css";
 
 function QuitPage() {
 
@@ -12,8 +12,17 @@ function QuitPage() {
 
   return (
     <>
-      <h1>Goodbye and see you soon!</h1>
-      <p><button onClick={handleHomePageClick}>Home Page</button></p>
+    <div className = "div_general">
+
+      <h1> Goodbye and see you soon! </h1>
+
+      <button
+        className   = "button_1" onClick = {handleHomePageClick}
+        onMouseOver = {e => e.currentTarget.style.backgroundColor = '#0056b3'}
+        onMouseOut  = {e => e.currentTarget.style.backgroundColor = '#007BFF'}
+      > Home Page </button>
+
+    </div>
     </>
   );
 }

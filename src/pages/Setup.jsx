@@ -1,7 +1,6 @@
 import React, { useState, useContext } from "react";
 import { useNavigate } from 'react-router-dom';
 import { InventoryContext } from "../contexts/InventoryProvider";
-
 import "./../App.css";
 
 function SetupPage() {
@@ -21,6 +20,21 @@ function SetupPage() {
     // Set the max number of books
     inventory.maxBooks = formData.maxBooks;
 
+    // Parse the input as an integer
+    const maxBooks = parseInt(formData.maxBooks);
+
+    // Check if the input is NaN, 0, or null
+    if (isNaN(maxBooks)) {
+      setError("Enter a valid number!");
+      return;
+    } else if (maxBooks <= 0) {
+      setError("Enter a number greater than 0!");
+      return;
+    // } else if (Number.isInteger(maxBooks)) {
+    //   setError("Enter a whole number!");
+    //   return;
+    }
+
     // Navigate to the main page
     navigate('/main');
   };
@@ -32,16 +46,39 @@ function SetupPage() {
 
   return (
     <>
-      <h1>Setup Page</h1>
-      <form onSubmit={handleOnSubmit}>
-        <label>Max Number of Books: </label>
-        <input type="text" name="maxBooks" value={formData.maxBooks} onChange={handleInputChange} />
+    <div className = "div_general">
+
+      <h1> Setup Page </h1>
+
+      <form onSubmit = {handleOnSubmit} className = "form_1">
+        <label className = "label_form"> Maximum Number of Books...: </label>
+        &ensp;
+        <input
+          type = "text"
+          name = "maxBooks"
+          className = "input_form"
+          value     = {formData.maxBooks}
+          onChange  = {handleInputChange}
+        />
         <br />
-        <button type="submit">Confirm</button>
-        <button onClick={handleHomePageClick}>Home</button>
-        <br />
-        {error && <div className="error"><p>{error}</p></div>}
+        {error && <div><p className = "error">{error}</p></div>}
+        
+        <button
+          className   = "button_1" type = "submit"
+          onMouseOver = {e => e.currentTarget.style.backgroundColor = '#0056b3'}
+          onMouseOut  = {e => e.currentTarget.style.backgroundColor = '#007BFF'}
+        > Confirm </button>
+        &ensp;
+        &ensp;
+        &ensp;
+        <button
+          className   = "button_1" onClick = {handleHomePageClick}
+          onMouseOver = {e => e.currentTarget.style.backgroundColor = '#0056b3'}
+          onMouseOut  = {e => e.currentTarget.style.backgroundColor = '#007BFF'}
+        > Home </button>
       </form>
+ 
+    </div>
     </>
   );
 }
