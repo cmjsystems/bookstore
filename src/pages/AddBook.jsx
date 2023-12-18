@@ -108,6 +108,14 @@ function AddBookPage() {
     // Increment the created books counter
     setCreatedBooks(createdBooks + 1);
 
+    // View book list in browser console
+    //console.log(`Book ID: ${formData.id}`);
+    console.log(`Title: ${formData.title}`);
+    console.log(`Author: ${formData.author}`);
+    console.log(`ISBN: ${formData.isbn}`);
+    console.log(`Price: ${formData.price}`);
+
+
     // Reset the book form
     setFormData({ ...formData, ...initialBook });
   };

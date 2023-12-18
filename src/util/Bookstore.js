@@ -61,14 +61,6 @@ class Bookstore {
   getBooks() {
     return this.books;
   }
-
-  displayInfo() {
-    console.log(`Book ID: ${this.id}`);
-    console.log(`Title: ${this.title}`);
-    console.log(`Author: ${this.author}`);
-    console.log(`ISBN: ${this.isbn}`);
-    console.log(`Price: ${this.price}`);
-  }
 }
 
 export default Bookstore;
